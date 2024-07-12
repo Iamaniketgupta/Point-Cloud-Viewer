@@ -11,9 +11,7 @@ const PORT = 5000;
 
 const execFileAsync = util.promisify(execFile);
 
-app.use(cors({
-    origin: '*'
-}));
+app.use(cors());
 
 
 app.use(express.static(path.join(__dirname, 'pointclouds')));
@@ -84,6 +82,8 @@ app.use((err, req, res, next) => {
     res.status(500).send('Something broke!');
 });
 
+
+app.get('/',(req,res)=>res.send('Hello World'))
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
