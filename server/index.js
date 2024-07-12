@@ -15,6 +15,8 @@ app.use(cors({
      origin: 'https://test-pointcloud.vercel.app'
 }));
 
+app.use(express.json({ limit: '1gb' }));
+app.use(express.urlencoded({ limit: '1gb', extended: true }));
 
 app.use(express.static(path.join(__dirname, 'pointclouds')));
 
