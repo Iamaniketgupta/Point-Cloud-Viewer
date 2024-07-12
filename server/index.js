@@ -12,7 +12,7 @@ const PORT = 5000;
 const execFileAsync = util.promisify(execFile);
 
 app.use(cors({
-    origin: '*'
+    origin: 'https://test-pointcloud.vercel.app'
 }));
 
 
@@ -60,7 +60,7 @@ app.post('/upload', upload.single('pointcloud'), async (req, res) => {
             console.error('PotreeConverter stderr:', stderr);
         }
 
-        const tilesetUrl = `http://localhost:5000/pointclouds/${path.parse(sampleFile.originalname).name}/metadata.json`;
+        const tilesetUrl = `https://test-pointcloud-api.vercel.app/pointclouds/${path.parse(sampleFile.originalname).name}/metadata.json`;
         await fs.unlink(sampleFile.path);
 
         res.send({

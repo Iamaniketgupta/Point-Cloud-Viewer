@@ -25,7 +25,7 @@ function App() {
     setLoading(true);
     setUploading(true);
     try {
-      const res = await axios.post('http://localhost:5000/upload', formData, {
+      const res = await axios.post('https://test-pointcloud-api.vercel.app/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
