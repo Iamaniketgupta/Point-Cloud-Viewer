@@ -7,7 +7,7 @@ const multer = require('multer');
 const fs = require('fs').promises;
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 const execFileAsync = util.promisify(execFile);
 
@@ -83,7 +83,7 @@ app.get('/pointclouds', (req, res) => {
 
 app.use((err, req, res, next) => {
     console.error(err.stack);
-    res.status(500).send('Something broke!');
+    res.status(500).send('Something broke!',err);
 });
 
 
