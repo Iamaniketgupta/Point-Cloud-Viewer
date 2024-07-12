@@ -11,7 +11,9 @@ const PORT = 5000;
 
 const execFileAsync = util.promisify(execFile);
 
-app.use(cors());
+app.use(cors({
+     origin: 'https://test-pointcloud.vercel.app'
+}));
 
 
 app.use(express.static(path.join(__dirname, 'pointclouds')));
