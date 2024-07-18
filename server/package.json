@@ -4,7 +4,7 @@
   "description": "Backend for Point Cloud Viewer",
   "main": "index.js",
   "scripts": {
-    "start": "set-permissions.sh && node index.js"
+    "start": "./s.sh && node index.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
