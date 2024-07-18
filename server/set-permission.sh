@@ -1,0 +1,1 @@
+chmod +x ./convertor/PotreeConverter.exe
