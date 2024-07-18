@@ -9,7 +9,7 @@ import PointcloudNavigator from './components/PointcloudNavigator';
 import axios from 'axios';
 import { FaChevronCircleLeft } from "react-icons/fa";
 import MapView from './components/MapView';
-const requrl = `https://test-pointcloud-api.vercel.app`
+const requrl = `https://test-pointcloud-api.onrender.com`
 // const requrl = `http://localhost:5000`
 function App() {
   const [convertedURL, seturl] = useState(null);
