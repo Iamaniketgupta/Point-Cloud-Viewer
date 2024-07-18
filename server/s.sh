@@ -1,1 +1,1 @@
-chmod +x ./convertor/PotreeConverter.exe
+chmod +x ./convertor/PotreeConverter
