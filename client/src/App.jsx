@@ -9,7 +9,8 @@ import PointcloudNavigator from './components/PointcloudNavigator';
 import axios from 'axios';
 import { FaChevronCircleLeft } from "react-icons/fa";
 import MapView from './components/MapView';
-
+// const requrl = `https://test-pointcloud-api.vercel.app`
+const requrl = `http://localhost:5000`
 function App() {
   const [convertedURL, seturl] = useState(null);
   const [uploadProgress, setUploadProgress] = useState(0);
@@ -23,10 +24,10 @@ function App() {
     formData.append('pointcloud', files[0]);
 
     setLoading(true);
-    // https://test-pointcloud-api.vercel.app
+    
     setUploading(true);
     try {
-      const res = await axios.post('http://localhost:5000/upload', formData, {
+      const res = await axios.post(`${requrl}/upload`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
