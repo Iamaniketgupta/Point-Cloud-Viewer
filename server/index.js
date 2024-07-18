@@ -12,9 +12,10 @@ const PORT = process.env.PORT || 5000;
 const execFileAsync = util.promisify(execFile);
 
 app.use(cors({
-     origin:['https://test-pointcloud.vercel.app','http://localhost:5173']
-}));
-
+    origin: ['https://test-pointcloud.vercel.app', 'http://localhost:5173'],
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type'],
+  }));
 app.use(express.json({ limit: '1gb' }));
 app.use(express.urlencoded({ limit: '1gb', extended: true }));
 
