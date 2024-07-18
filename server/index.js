@@ -46,7 +46,7 @@ app.post('/upload', upload.single('pointcloud'), async (req, res) => {
     }
 
     const outputDir = path.join(__dirname, 'pointclouds', path.parse(sampleFile.originalname).name);
-    const potreeConverterPath = path.join(__dirname, 'convertor', 'PotreeConverter.exe');
+    const potreeConverterPath = path.join(__dirname, 'convertor', 'PotreeConverter');
 
     const parameters = [
         '-i',
